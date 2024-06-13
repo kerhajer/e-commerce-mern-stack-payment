@@ -17,7 +17,6 @@ const createConfig = () => {
 export const getordersuccess = createAsyncThunk('order/getordersuccess', async (_, { rejectWithValue }) => {
     try {
         const config = createConfig();
-        console.log(config);
 
         const response = await axios.get('http://localhost:5000/api/orders/order', config);
         return response.data;

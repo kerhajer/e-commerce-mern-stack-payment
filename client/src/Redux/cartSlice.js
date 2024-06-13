@@ -30,10 +30,10 @@ export const addcart = createAsyncThunk('cart/addcart', async ( { productId: id 
 
 export const handlePayment = createAsyncThunk('cart/handlePayment',async (productCartItems, { getState, rejectWithValue }) => {
     try {
-        const  stripekey=process.env.REACT_APP_STRIPE_PUBLIC_KEY
+        const  REACT_APP_STRIPE_PUBLIC_KEY="pk_test_51PNaqIAUABmyr4e2uwcfyzetiUdzvPudT6oOcrb7FlChDHBOmIkz44F0fDRM6NchSCFgBT3KHy8NShyDsbiHLNov00RfJDgXok"
 
         const config = createConfig();
-        const stripePromise = await loadStripe(stripekey);
+        const stripePromise = await loadStripe(REACT_APP_STRIPE_PUBLIC_KEY);
    // Extract necessary data for Stripe
    const itemsForCheckout = productCartItems.map(item => ({
     _id: item._id,
